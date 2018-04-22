@@ -1,12 +1,31 @@
-;; Copyright 2018 Muir Manders.  All rights reserved.
-;; Use of this source code is governed by a BSD-style
-;; license that can be found in the LICENSE file.
+;;; nova-theme.el --- a dark pastel color theme
+;;
+;; Copyright (C) 2018 Muir Manders
+;;
+;; Author: Muir Manders <muir+emacs@mnd.rs>
+;; Version: 0.1.0
+;; Package-Requires: ((emacs "24") cl-lib color)
+;; Keywords: theme dark nova pastel faces
+;; URL: https://github.com/muirmanders/emacs-nova-theme
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; Commentary:
+;;
+;; Nova is an Emacs color theme using Trevor Miller's Nova color scheme
+;; <https://trevordmiller.com/projects/nova>.
+;;
+;;; Credits:
+;;
+;; Trevor Miller came up with the color scheme.
+;;
+;;; Code:
 
 (require 'color)
 (require 'cl-lib)
 
 (deftheme nova
-  "A dark theme using Trevord Miller's Nova color scheme.
+  "A dark theme using Trevor Miller's Nova color scheme.
 See <https://trevordmiller.com/projects/nova>.")
 
 (defvar nova-base-colors
@@ -44,15 +63,19 @@ See <https://trevordmiller.com/projects/nova>.")
     (added green)
     (modified orange)
     (removed red)
-    (renamed blue)
-
-    (light-pink (nova-lighten pink 0.5))))
+    (renamed blue)))
 
 (defun nova--build-face (face)
+  "Internal helper to turn FACE into proper face spec."
   (let ((name (car face)) (attrs (cdr face)))
     `(list ',name (list (list t ,@attrs)))))
 
 (defmacro nova-set-faces (&rest faces)
+  "Macro for conveniently setting nova faces.
+Makes color variables available, and reduces face spec clutter.
+FACES is a list of faces of the form (name :attr value) such as:
+
+\(some-important-face :foreground red)"
   (declare (indent defun))
   `(nova-with-colors
      (custom-theme-set-faces
@@ -60,13 +83,16 @@ See <https://trevordmiller.com/projects/nova>.")
       ,@(mapcar #'nova--build-face faces))))
 
 (defun nova-darken (color alpha)
+  "Darken given rgb string COLOR by ALPHA (0-1)."
   (nova-blend "#000000" color alpha))
 
 (defmacro nova-with-colors (&rest body)
+  "Macro to make color variables available to BODY."
   (declare (indent defun))
   `(let* ,nova-base-colors ,@body))
 
 (defun nova-blend (c1 c2 a)
+  "Combine A C1 with (1-a) C2."
   (apply
    'color-rgb-to-hex
    (cl-mapcar
@@ -75,6 +101,7 @@ See <https://trevordmiller.com/projects/nova>.")
     (color-name-to-rgb c2))))
 
 (defun nova-lighten (color alpha)
+  "Lighten given rgb string COLOR by ALPHA (0-1)."
   (nova-blend "#FFFFFF" color alpha))
 
 (nova-set-faces
@@ -251,4 +278,12 @@ See <https://trevordmiller.com/projects/nova>.")
        (500 . ,,(nova-blend blue purple 0.2))
        (520 . ,,purple)))))
 
+;;;###autoload
+(when (and load-file-name (boundp 'custom-theme-load-path))
+  (add-to-list
+   'custom-theme-load-path
+   (file-name-directory load-file-name)))
+
 (provide-theme 'nova)
+
+;;; nova-theme.el ends here
