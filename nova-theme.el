@@ -65,10 +65,37 @@ See <https://trevordmiller.com/projects/nova>.")
     (removed red)
     (renamed blue)))
 
+;;;###autoload
 (defun nova--build-face (face)
   "Internal helper to turn FACE into proper face spec."
   (let ((name (car face)) (attrs (cdr face)))
     `(list ',name (list (list t ,@attrs)))))
+
+;;;###autoload
+(defun nova-darken (color alpha)
+  "Darken given rgb string COLOR by ALPHA (0-1)."
+  (nova-blend "#000000" color alpha))
+
+;;;###autoload
+(defmacro nova-with-colors (&rest body)
+  "Macro to make color variables available to BODY."
+  (declare (indent defun))
+  `(let* ,nova-base-colors ,@body))
+
+;;;###autoload
+(defun nova-blend (c1 c2 a)
+  "Combine A C1 with (1-a) C2."
+  (apply
+   'color-rgb-to-hex
+   (cl-mapcar
+    (lambda (c1 c2) (+ (* a c1) (* (- 1 a) c2)))
+    (color-name-to-rgb c1)
+    (color-name-to-rgb c2))))
+
+;;;###autoload
+(defun nova-lighten (color alpha)
+  "Lighten given rgb string COLOR by ALPHA (0-1)."
+  (nova-blend "#FFFFFF" color alpha))
 
 (defmacro nova-set-faces (&rest faces)
   "Macro for conveniently setting nova faces.
@@ -81,28 +108,6 @@ FACES is a list of faces of the form (name :attr value) such as:
      (custom-theme-set-faces
       'nova
       ,@(mapcar #'nova--build-face faces))))
-
-(defun nova-darken (color alpha)
-  "Darken given rgb string COLOR by ALPHA (0-1)."
-  (nova-blend "#000000" color alpha))
-
-(defmacro nova-with-colors (&rest body)
-  "Macro to make color variables available to BODY."
-  (declare (indent defun))
-  `(let* ,nova-base-colors ,@body))
-
-(defun nova-blend (c1 c2 a)
-  "Combine A C1 with (1-a) C2."
-  (apply
-   'color-rgb-to-hex
-   (cl-mapcar
-    (lambda (c1 c2) (+ (* a c1) (* (- 1 a) c2)))
-    (color-name-to-rgb c1)
-    (color-name-to-rgb c2))))
-
-(defun nova-lighten (color alpha)
-  "Lighten given rgb string COLOR by ALPHA (0-1)."
-  (nova-blend "#FFFFFF" color alpha))
 
 (nova-set-faces
   ;; basic faces (faces.el)
