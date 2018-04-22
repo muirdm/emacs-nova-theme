@@ -143,6 +143,13 @@ See <https://trevordmiller.com/projects/nova>.")
   (swiper-match-face-3 :background orange :foreground bg)
   (swiper-match-face-4 :background green :foreground bg)
 
+  ;; hydra faces
+  (hydra-face-red :foreground red)
+  (hydra-face-amaranth :foreground purple)
+  (hydra-face-blue :foreground blue)
+  (hydra-face-pink :foreground pink)
+  (hydra-face-teal :foreground cyan)
+
   ;; magit faces
   (magit-tag :foreground yellow)
   (magit-filename :foreground purple)
