@@ -63,7 +63,10 @@ See <https://trevordmiller.com/projects/nova>.")
     (added green)
     (modified orange)
     (removed red)
-    (renamed blue)))
+    (renamed blue)
+
+    ;; non-standard additions
+    (variable pink)))
 
 ;;;###autoload
 (defun nova--build-face (face)
@@ -139,7 +142,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (font-lock-string-face :foreground constant)
   (font-lock-keyword-face :foreground global)
   (font-lock-builtin-face :foreground global)
-  (font-lock-variable-name-face :foreground identifier)
+  (font-lock-variable-name-face :foreground variable)
   (font-lock-type-face :foreground type)
   (font-lock-warning-face :foreground yellow)
   (font-lock-comment-face :foreground trivial)
@@ -236,15 +239,15 @@ FACES is a list of faces of the form (name :attr value) such as:
   (web-mode-html-entity-face :foreground cyan :inherit 'italic)
   (web-mode-block-control-face :foreground emphasis)
 
-  (enh-ruby-op-face :foreground 'unspecified)
-  (enh-ruby-string-delimiter-face :foreground 'unspecified)
-  (enh-ruby-heredoc-delimiter-face :foreground 'unspecified)
-  (enh-ruby-regexp-delimiter-face :foreground 'unspecified)
-  (enh-ruby-regexp-face :foreground 'unspecified)
+  (enh-ruby-op-face :inherit 'default)
+  (enh-ruby-string-delimiter-face :inherit 'font-lock-string-face)
+  (enh-ruby-heredoc-delimiter-face :inherit 'font-lock-string-face)
+  (enh-ruby-regexp-delimiter-face :foreground special)
+  (enh-ruby-regexp-face :foreground special)
 
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
-  (js2-function-param :foreground type)
+  (js2-function-param :foreground variable)
   (js2-function-call :foreground identifier)
   (js2-jsdoc-tag :foreground trivial)
   (js2-jdsoc-type :foreground type)
