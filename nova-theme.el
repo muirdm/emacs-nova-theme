@@ -1,10 +1,10 @@
-;;; nova-theme.el --- a dark pastel color theme
+;;; nova-theme.el --- a dark, pastel color theme
 ;;
 ;; Copyright (C) 2018 Muir Manders
 ;;
 ;; Author: Muir Manders <muir+emacs@mnd.rs>
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "24") cl-lib color)
+;; Package-Requires: ((emacs "24.3"))
 ;; Keywords: theme dark nova pastel faces
 ;; URL: https://github.com/muirmanders/emacs-nova-theme
 ;;
