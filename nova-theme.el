@@ -187,7 +187,7 @@ FACES is a list of faces of the form (name :attr value) such as:
 
   ;; magit faces
   (magit-tag :foreground yellow)
-  (magit-filename :foreground purple)
+  (magit-filename :foreground fg)
   (magit-branch-current :foreground user-current-state :box t)
   (magit-branch-local :foreground user-current-state)
   (magit-branch-remote :foreground green)
@@ -197,9 +197,10 @@ FACES is a list of faces of the form (name :attr value) such as:
   (magit-process-ok :inherit 'success)
   (magit-section-highlight :background gray2)
   (magit-section-heading :foreground blue)
+  (magit-section-heading-selection :foreground cyan :background gray2)
   (magit-diff-file-heading-selection :foreground cyan :background gray2)
-  (magit-diff-hunk-heading :foreground (nova-darken cyan 0.1) :background gray2)
-  (magit-diff-hunk-heading-highlight :foreground cyan :background gray2)
+  (magit-diff-hunk-heading :foreground (nova-darken blue 0.1) :background gray2)
+  (magit-diff-hunk-heading-highlight :foreground blue :background gray2)
   (magit-diff-lines-heading :background orange :foreground bg)
   (magit-diff-added :foreground added :background (nova-blend added bg 0.1))
   (magit-diff-added-highlight :foreground added :background (nova-blend added bg 0.2))
@@ -221,6 +222,9 @@ FACES is a list of faces of the form (name :attr value) such as:
   (diff-header :inherit 'magit-section)
   (diff-function :foreground identifier)
   (diff-hunk-header :foreground purple)
+
+  (compilation-mode-line-fail :foreground red)
+  (compilation-mode-line-exit :foreground green)
 
   (company-tooltip :foreground bg :background blue)
   (company-tooltip-selection :background purple)
