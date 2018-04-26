@@ -149,12 +149,12 @@ FACES is a list of faces of the form (name :attr value) such as:
   (font-lock-negation-char-face :foreground emphasis)
 
   ;; powerline faces
-  (powerline-active0 :background (nova-blend blue bg 0.6) :foreground fg)
-  (powerline-active1 :background (nova-blend purple bg 0.6) :foreground fg)
-  (powerline-active2 :background gray3 :foreground fg)
-  (powerline-inactive0 :background (nova-blend blue bg 0.3) :foreground (nova-darken fg 0.2))
-  (powerline-inactive1 :background (nova-blend purple bg 0.3) :foreground (nova-darken fg 0.2))
-  (powerline-inactive2 :background gray2 :foreground (nova-darken fg 0.2))
+  (powerline-active0 :background (nova-blend blue bg 0.6) :foreground (nova-blend (nova-blend blue bg 0.6) fg 0.1))
+  (powerline-active1 :background (nova-blend pink bg 0.6) :foreground (nova-blend (nova-blend pink bg 0.6) fg 0.1))
+  (powerline-active2 :background (nova-blend purple bg 0.6) :foreground (nova-blend (nova-blend purple bg 0.6) fg 0.1))
+  (powerline-inactive0 :background (nova-blend blue bg 0.3) :foreground (nova-darken (nova-blend blue fg 0.2) 0.2))
+  (powerline-inactive1 :background (nova-blend pink bg 0.3) :foreground (nova-darken (nova-blend pink fg 0.2) 0.2))
+  (powerline-inactive2 :background (nova-blend purple bg 0.3) :foreground (nova-darken (nova-blend purple fg 0.2) 0.2))
 
   ;; search faces
   (match :background emphasis :foreground gray0)
@@ -223,6 +223,30 @@ FACES is a list of faces of the form (name :attr value) such as:
   (diff-function :foreground identifier)
   (diff-hunk-header :foreground purple)
 
+  ;; outline faces
+  (outline-1 :foreground blue)
+  (outline-2 :foreground orange)
+  (outline-3 :foreground green)
+  (outline-4 :foreground cyan)
+  (outline-5 :foreground red )
+  (outline-6 :foreground pink)
+  (outline-7 :foreground yellow)
+  (outline-8 :foreground purple)
+
+  ;; org faces
+  (org-hide :foreground bg)
+  (org-code :foreground purple)
+  (org-block :inherit 'org-code :background (nova-blend purple bg 0.1))
+  (org-date :inherit 'link)
+  (org-footnote :inherit 'link)
+  (org-todo :foreground yellow :weight 'bold :box '(:line-width 1) :background (nova-blend yellow bg 0.1))
+  (org-done :foreground green :weight 'bold :box '(:line-width 1) :background (nova-blend green bg 0.1))
+  (org-table :foreground yellow :background (nova-blend yellow bg 0.1))
+  (org-checkbox :background gray2 :box '(:line-width 1 :style released-button))
+  (org-formula :foreground yellow)
+  (org-sexp-date :foreground cyan)
+  (org-scheduled :foreground green)
+
   (compilation-mode-line-fail :foreground red)
   (compilation-mode-line-exit :foreground green)
 
@@ -230,7 +254,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (company-tooltip-selection :background purple)
   (company-tooltip-common :background 'unspecified)
   (company-preview :foreground bg)
-  (company-preview-common :background gray3)
+  (company-preview-common :background gray3 :foreground fg)
   (company-scrollbar-bg :background (nova-darken blue 0.2))
   (company-scrollbar-fg :background (nova-darken blue 0.4))
   (company-template-field :background orange :foreground bg)
