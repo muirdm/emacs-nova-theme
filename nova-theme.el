@@ -66,7 +66,8 @@ See <https://trevordmiller.com/projects/nova>.")
     (renamed blue)
 
     ;; non-standard additions
-    (variable pink)))
+    (variable pink)
+    (black (nova-darken bg 0.4))))
 
 ;;;###autoload
 (defun nova--build-face (face)
@@ -131,6 +132,8 @@ FACES is a list of faces of the form (name :attr value) such as:
   (header-line :background bg)
   (mode-line :box nil :background (nova-blend blue bg 0.6) :foreground fg)
   (mode-line-inactive :box nil :background (nova-blend blue bg 0.3) :foreground (nova-darken fg 0.2))
+  (mode-line-buffer-id :weight 'unspecified :foreground (nova-lighten fg 0.5))
+  (mode-line-buffer-id-inactive :foreground (nova-darken fg 0.2)) ; doesn't seem to work
   (mode-line-highlight :inherit 'highlight)
   (link :foreground cyan :underline t)
   (vertical-border :foreground trivial)
@@ -149,12 +152,12 @@ FACES is a list of faces of the form (name :attr value) such as:
   (font-lock-negation-char-face :foreground emphasis)
 
   ;; powerline faces
-  (powerline-active0 :background (nova-blend blue bg 0.6) :foreground (nova-blend (nova-blend blue bg 0.6) fg 0.1))
-  (powerline-active1 :background (nova-blend pink bg 0.6) :foreground (nova-blend (nova-blend pink bg 0.6) fg 0.1))
-  (powerline-active2 :background (nova-blend purple bg 0.6) :foreground (nova-blend (nova-blend purple bg 0.6) fg 0.1))
-  (powerline-inactive0 :background (nova-blend blue bg 0.3) :foreground (nova-darken (nova-blend blue fg 0.2) 0.2))
-  (powerline-inactive1 :background (nova-blend pink bg 0.3) :foreground (nova-darken (nova-blend pink fg 0.2) 0.2))
-  (powerline-inactive2 :background (nova-blend purple bg 0.3) :foreground (nova-darken (nova-blend purple fg 0.2) 0.2))
+  (powerline-active0 :background (nova-blend purple bg 0.4) :foreground cyan)
+  (powerline-active1 :background (nova-blend purple bg 0.4) :foreground cyan)
+  (powerline-active2 :background black :foreground fg)
+  (powerline-inactive0 :background (nova-blend purple bg 0.2) :foreground (nova-darken cyan 0.2))
+  (powerline-inactive1 :background (nova-blend purple bg 0.2) :foreground (nova-darken cyan 0.2))
+  (powerline-inactive2 :background (nova-darken black -0.2) :foreground (nova-darken fg 0.2))
 
   ;; search faces
   (match :background emphasis :foreground gray0)
@@ -233,7 +236,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (outline-7 :foreground yellow)
   (outline-8 :foreground purple)
 
-  ;; org faces
+  ;; org-mode faces
   (org-hide :foreground bg)
   (org-code :foreground purple)
   (org-block :inherit 'org-code :background (nova-blend purple bg 0.1))
@@ -273,6 +276,11 @@ FACES is a list of faces of the form (name :attr value) such as:
   (enh-ruby-regexp-delimiter-face :foreground special)
   (enh-ruby-regexp-face :foreground special)
 
+  ;; cperl-mode faces
+  (cperl-hash-face :foreground red :background 'unspecified)
+  (cperl-array-face :foreground yellow :background 'unspecified)
+  (cperl-nonoverridable-face :inherit 'font-lock-builtin-face)
+
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
   (js2-function-param :foreground variable)
@@ -285,6 +293,7 @@ FACES is a list of faces of the form (name :attr value) such as:
 (nova-with-colors
   (custom-theme-set-variables
    'nova
+   `(vc-annotate-background ,bg)
    `(vc-annotate-very-old-color ,(nova-darken purple 0.2))
    `(vc-annotate-color-map
      `((20 . ,,red)
