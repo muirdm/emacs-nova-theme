@@ -67,7 +67,8 @@ See <https://trevordmiller.com/projects/nova>.")
 
     ;; non-standard additions
     (variable pink)
-    (black (nova-darken bg 0.4))))
+    (black (nova-darken bg 0.2))
+    (white (nova-lighten fg 0.5))))
 
 ;;;###autoload
 (defun nova--build-face (face)
@@ -132,7 +133,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (header-line :background bg)
   (mode-line :box nil :background (nova-blend blue bg 0.6) :foreground fg)
   (mode-line-inactive :box nil :background (nova-blend blue bg 0.3) :foreground (nova-darken fg 0.2))
-  (mode-line-buffer-id :weight 'unspecified :foreground (nova-lighten fg 0.5))
+  (mode-line-buffer-id :weight 'unspecified :foreground white)
   (mode-line-buffer-id-inactive :foreground (nova-darken fg 0.2)) ; doesn't seem to work
   (mode-line-highlight :inherit 'highlight)
   (link :foreground cyan :underline t)
@@ -154,7 +155,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   ;; powerline faces
   (powerline-active0 :background (nova-blend purple bg 0.4) :foreground cyan)
   (powerline-active1 :background (nova-blend purple bg 0.4) :foreground cyan)
-  (powerline-active2 :background black :foreground fg)
+  (powerline-active2 :background black :foreground cyan)
   (powerline-inactive0 :background (nova-blend purple bg 0.2) :foreground (nova-darken cyan 0.2))
   (powerline-inactive1 :background (nova-blend purple bg 0.2) :foreground (nova-darken cyan 0.2))
   (powerline-inactive2 :background (nova-darken black -0.2) :foreground (nova-darken fg 0.2))
@@ -238,8 +239,8 @@ FACES is a list of faces of the form (name :attr value) such as:
 
   ;; org-mode faces
   (org-hide :foreground bg)
-  (org-code :foreground purple)
-  (org-block :inherit 'org-code :background (nova-blend purple bg 0.1))
+  (org-code :foreground blue :background (nova-blend blue bg 0.2))
+  (org-block :inherit 'unspecified :background (nova-blend blue bg 0.2))
   (org-date :inherit 'link)
   (org-footnote :inherit 'link)
   (org-todo :foreground yellow :weight 'bold :box '(:line-width 1) :background (nova-blend yellow bg 0.1))
