@@ -367,7 +367,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (custom-changed :foreground orange :background bg)
 
   ;; dired faces
-  (dired-directory :foreground purple)
+  (dired-directory :foreground blue)
   (dired-ignored :foreground trivial)
   (dired-flagged :foreground red :background (nova-blend red bg 0.2))
   (dired-header :foreground pink)
@@ -395,7 +395,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (diredp-date-time :foreground cyan)
 
   ;; priv faces
-  (diredp-dir-priv :foreground purple)
+  (diredp-dir-priv :foreground blue)
   (diredp-read-priv :foreground green)
   (diredp-write-priv :foreground orange)
   (diredp-exec-priv :foreground red)
