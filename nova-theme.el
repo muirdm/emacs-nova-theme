@@ -117,9 +117,9 @@ FACES is a list of faces of the form (name :attr value) such as:
 (nova-set-faces
   ;; basic faces (faces.el)
   (default :foreground fg :background bg)
+  (cursor :background user-current-state)
   (region :background gray3 :distant-foreground nil)
   (highlight :background user-current-state :foreground bg)
-  (cursor :background user-current-state)
   (fringe :foreground gray3)
   (success :foreground green)
   (warning :foreground yellow)
@@ -138,6 +138,9 @@ FACES is a list of faces of the form (name :attr value) such as:
   (mode-line-highlight :inherit 'highlight)
   (link :foreground cyan :underline t)
   (vertical-border :foreground trivial)
+  (window-divider :inherit 'vertical-border)
+  (window-divider-first-pixel :inherit 'vertical-border)
+  (window-divider-last-pixel :inherit 'vertical-border)
   (shadow :foreground trivial)
 
   ;; font lock faces
@@ -161,7 +164,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (powerline-inactive2 :background (nova-darken gray0 -0.3) :foreground (nova-darken fg 0.2))
 
   ;; search faces
-  (match :background emphasis :foreground gray0)
+  (match :background emphasis :foreground gray0 :distant-foreground gray0)
   (isearch :inherit 'match)
   (lazy-highlight :background (nova-darken emphasis 0.3) :foreground bg)
 
@@ -188,6 +191,13 @@ FACES is a list of faces of the form (name :attr value) such as:
   (hydra-face-blue :foreground blue)
   (hydra-face-pink :foreground pink)
   (hydra-face-teal :foreground cyan)
+
+  ;; ido faces
+  (ido-first-match :foreground emphasis)
+  (ido-indicator :foreground red :background bg)
+  (ido-only-match :foreground green)
+  (ido-subdir :foreground blue)
+  (ido-virtual :foreground trivial)
 
   ;; magit faces
   (magit-tag :foreground yellow)
@@ -259,6 +269,23 @@ FACES is a list of faces of the form (name :attr value) such as:
   (diff-header :inherit 'magit-section)
   (diff-function :foreground identifier)
   (diff-hunk-header :foreground purple)
+
+  ;; rainbow-delimiters faces
+  (rainbow-delimiters-depth-1-face :foreground blue)
+  (rainbow-delimiters-depth-2-face :foreground pink)
+  (rainbow-delimiters-depth-3-face :foreground green)
+  (rainbow-delimiters-depth-4-face :foreground orange)
+  (rainbow-delimiters-depth-5-face :foreground purple)
+  (rainbow-delimiters-depth-6-face :foreground yellow)
+  (rainbow-delimiters-depth-7-face :foreground cyan)
+  (rainbow-delimiters-unmatched-face :foreground red :background (nova-blend red bg 0.2))
+
+  ;; wgrep faces
+  (wgrep-face :background gray2 :foreground 'unspecified)
+  (wgrep-delete-face :foreground red :background (nova-blend red bg 0.2))
+  (wgrep-done-face :foreground blue)
+  (wgrep-file-face :foreground 'unspecified :background gray2)
+  (wgrep-reject-face :foreground red :weight 'bold)
 
   ;; outline faces
   (outline-1 :foreground blue)
@@ -399,6 +426,23 @@ FACES is a list of faces of the form (name :attr value) such as:
   (eshell-ls-special :foreground pink)
   (eshell-ls-symlink :foreground cyan)
   (eshell-ls-unreadable :foreground orange)
+
+  ;; term faces
+  (term :foreground fg)
+  (term-bold :weight 'bold)
+  (term-color-black :background gray0   :foreground gray0)
+  (term-color-red :background red :foreground red)
+  (term-color-green :background green :foreground green)
+  (term-color-yellow :background yellow :foreground yellow)
+  (term-color-blue :background blue :foreground blue)
+  (term-color-magenta :background pink :foreground pink)
+  (term-color-cyan :background cyan :foreground cyan)
+  (term-color-white :background white :foreground white)
+
+  ;; sh-mode faces
+  (sh-heredoc :inherit 'font-lock-string-face :weight 'unspecified)
+  (sh-quoted-exec :foreground yellow)
+  (sh-escaped-newline :foreground special)
 
   ;; cperl-mode faces
   (cperl-hash-face :foreground red :background 'unspecified)
