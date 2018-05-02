@@ -277,6 +277,53 @@ FACES is a list of faces of the form (name :attr value) such as:
   (enh-ruby-regexp-delimiter-face :foreground special)
   (enh-ruby-regexp-face :foreground special)
 
+  ;; dired faces
+  (dired-directory :foreground purple)
+  (dired-ignored :foreground trivial)
+  (dired-flagged :foreground red :background (nova-blend red bg 0.2))
+  (dired-header :foreground pink)
+  (dired-mark :foreground blue)
+  (dired-marked :background gray3)
+  (dired-perm-write :foreground red)
+  (dired-symlink :foreground orange)
+  (dired-warning :inherit 'warning)
+
+  ;; dired+
+  ;;
+  ;; file faces
+  (diredp-dir-heading :foreground pink)
+  (diredp-dir-name :foreground purple)
+  (diredp-file-name :inherit 'default)
+  (diredp-file-suffix :inherit 'default)
+  (diredp-compressed-file-name :foreground yellow)
+  (diredp-compressed-file-suffix :foreground yellow)
+  (diredp-symlink :foreground orange)
+  (diredp-autofile-name :foreground pink)
+  (diredp-ignored-file-name :foreground (nova-darken red 0.2))
+
+  ;; other column faces
+  (diredp-number :foreground yellow)
+  (diredp-date-time :foreground cyan)
+
+  ;; priv faces
+  (diredp-dir-priv :foreground purple)
+  (diredp-read-priv :foreground green)
+  (diredp-write-priv :foreground orange)
+  (diredp-exec-priv :foreground red)
+  (diredp-link-priv :foreground blue)
+  (diredp-other-priv :foreground yellow)
+  (diredp-rare-priv :foreground pink)
+  (diredp-no-priv :foreground fg)
+
+  ;; mark/tag/flag faces
+  (diredp-deletion :foreground red :background (nova-blend red bg 0.2))
+  (diredp-deletion-file-name :foreground red :background (nova-blend red bg 0.2))
+  (diredp-executable-tag :foreground red)
+  (diredp-flag-mark :foreground blue :background gray2)
+  (diredp-flag-mark-line :background gray2)
+  (diredp-mode-line-marked :foreground blue)
+  (diredp-mode-line-flagged :foreground red)
+
   ;; cperl-mode faces
   (cperl-hash-face :foreground red :background 'unspecified)
   (cperl-array-face :foreground yellow :background 'unspecified)
