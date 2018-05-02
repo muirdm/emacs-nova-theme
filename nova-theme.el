@@ -154,11 +154,11 @@ FACES is a list of faces of the form (name :attr value) such as:
 
   ;; powerline faces
   (powerline-active0 :background (nova-blend purple bg 0.4) :foreground cyan)
-  (powerline-active1 :background (nova-blend purple bg 0.4) :foreground cyan)
-  (powerline-active2 :background black :foreground cyan)
+  (powerline-active1 :background black :foreground cyan)
+  (powerline-active2 :background gray0 :foreground cyan)
   (powerline-inactive0 :background (nova-blend purple bg 0.2) :foreground (nova-darken cyan 0.2))
-  (powerline-inactive1 :background (nova-blend purple bg 0.2) :foreground (nova-darken cyan 0.2))
-  (powerline-inactive2 :background (nova-darken black -0.2) :foreground (nova-darken fg 0.2))
+  (powerline-inactive1 :background (nova-darken black -0.2) :foreground (nova-darken cyan 0.2))
+  (powerline-inactive2 :background (nova-darken gray0 -0.3) :foreground (nova-darken fg 0.2))
 
   ;; search faces
   (match :background emphasis :foreground gray0)
