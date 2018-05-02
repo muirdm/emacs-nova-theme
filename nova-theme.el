@@ -202,6 +202,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (magit-section-highlight :background gray2)
   (magit-section-heading :foreground blue)
   (magit-section-heading-selection :foreground cyan :background gray2)
+  (magit-section-secondary-heading :foreground purple :weight 'bold)
   (magit-diff-file-heading-selection :foreground cyan :background gray2)
   (magit-diff-hunk-heading :foreground (nova-darken blue 0.1) :background gray2)
   (magit-diff-hunk-heading-highlight :foreground blue :background gray2)
@@ -210,13 +211,45 @@ FACES is a list of faces of the form (name :attr value) such as:
   (magit-diff-added-highlight :foreground added :background (nova-blend added bg 0.2))
   (magit-diff-removed :foreground removed :background (nova-blend removed bg 0.1))
   (magit-diff-removed-highlight :foreground removed :background (nova-blend removed bg 0.2))
+  (magit-diff-base :foreground yellow :background (nova-blend yellow bg 0.1))
+  (magit-diff-base-highlight :foreground yellow :background (nova-blend yellow bg 0.2))
   (magit-diff-context :foreground trivial :background bg)
   (magit-diff-context-highlight :foreground trivial :background bg)
   (magit-diffstat-added :foreground added)
   (magit-diffstat-removed :foreground removed)
-  (magit-log-author :foreground red)
+  (magit-log-author :foreground pink)
   (magit-log-date :foreground blue)
   (magit-log-graph :foreground trivial)
+  (magit-bisect-bad :foreground red)
+  (magit-bisect-good :foreground green)
+  (magit-bisect-skip :foreground orange)
+  (magit-blame-heading  :background black)
+  (magit-blame-name :foreground pink :background black)
+  (magit-blame-date :foreground blue :background black)
+  (magit-blame-summary :foreground cyan :background black)
+  (magit-blame-hash :foreground trivial :background black)
+  (magit-cherry-equivalent :foreground purple)
+  (magit-cherry-unmatched :foreground cyan)
+  (magit-reflog-amend :foreground pink)
+  (magit-reflog-checkout :foreground blue)
+  (magit-reflog-cherry-pick :foreground green)
+  (magit-reflog-commit :foreground green)
+  (magit-reflog-merge :foreground green)
+  (magit-reflog-other :foreground cyan)
+  (magit-reflog-rebase :foreground pink)
+  (magit-reflog-remote :foreground cyan)
+  (magit-reflog-reset :inherit 'error)
+  (magit-refname :foreground trivial)
+  (magit-sequence-drop :foreground red)
+  (magit-sequence-head :foreground (nova-lighten blue 0.2))
+  (magit-sequence-part :foreground yellow)
+  (magit-sequence-stop :foreground (nova-darken green 0.2))
+  (magit-signature-bad :inherit 'error)
+  (magit-signature-error :inherit 'error)
+  (magit-signature-expired :inherit 'warning)
+  (magit-signature-good :inherit 'success)
+  (magit-signature-revoked :foreground pink)
+  (magit-signature-untrusted :foreground orange)
 
   ;; vc faces
   (diff-context :inherit 'magit-diff-context)
@@ -277,6 +310,35 @@ FACES is a list of faces of the form (name :attr value) such as:
   (enh-ruby-regexp-delimiter-face :foreground special)
   (enh-ruby-regexp-face :foreground special)
 
+  ;; widget faces
+  (widget-field :background gray2)
+  (widget-single-line-field :background gray2)
+  (widget-documentation :foreground cyan)
+
+  ;; info faces
+  (info-menu-star :foreground red)
+
+  ;; customize faces
+  (custom-variable-button :foreground green :underline t)
+  (custom-variable-tag :foreground pink)
+  (custom-group-tag :foreground purple)
+  (custom-group-tag-1 :foreground blue)
+  (custom-state :foreground yellow :background (nova-blend yellow bg 0.2))
+  (custom-saved :foreground green :background (nova-blend green bg 0.2))
+  (custom-button :foreground bg :background gray5 :box '(:line-width 2 :style released-button))
+  (custom-button-mouse :inherit 'custom-button :background gray6)
+  (custom-button-pressed :inherit 'custom-button :box '(:line-width 2 :style pressed-button))
+  (custom-button-pressed-unraised :foreground purple)
+  (custom-comment :foreground fg :background gray3)
+  (custom-comment-tag :foreground trivial)
+  (custom-modified :foreground modified :background (nova-blend modified bg 0.2))
+  (custom-group-subtitle :foreground orange)
+  (custom-variable-obsolete :foreground trivial)
+  (custom-set :foreground green :background bg)
+  (custom-themed :foreground blue :background bg)
+  (custom-invalid :foreground red :background (nova-blend red bg 0.2))
+  (custom-changed :foreground orange :background bg)
+
   ;; dired faces
   (dired-directory :foreground purple)
   (dired-ignored :foreground trivial)
@@ -292,7 +354,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   ;;
   ;; file faces
   (diredp-dir-heading :foreground pink)
-  (diredp-dir-name :foreground purple)
+  (diredp-dir-name :foreground blue)
   (diredp-file-name :inherit 'default)
   (diredp-file-suffix :inherit 'default)
   (diredp-compressed-file-name :foreground yellow)
@@ -324,6 +386,20 @@ FACES is a list of faces of the form (name :attr value) such as:
   (diredp-mode-line-marked :foreground blue)
   (diredp-mode-line-flagged :foreground red)
 
+  ;; eshell faces
+  (eshell-prompt :foreground cyan)
+  (eshell-ls-archive :inherit 'diredp-compressed-file-name)
+  (eshell-ls-backup :foreground trivial)
+  (eshell-ls-clutter :foreground trivial)
+  (eshell-ls-directory :inherit 'diredp-dir-name)
+  (eshell-ls-executable :foreground red)
+  (eshell-ls-missing :foreground red)
+  (eshell-ls-product :foreground orange)
+  (eshell-ls-readonly :foreground yellow)
+  (eshell-ls-special :foreground pink)
+  (eshell-ls-symlink :foreground cyan)
+  (eshell-ls-unreadable :foreground orange)
+
   ;; cperl-mode faces
   (cperl-hash-face :foreground red :background 'unspecified)
   (cperl-array-face :foreground yellow :background 'unspecified)
@@ -341,6 +417,7 @@ FACES is a list of faces of the form (name :attr value) such as:
 (nova-with-colors
   (custom-theme-set-variables
    'nova
+   `(frame-background-mode dark)
    `(vc-annotate-background ,bg)
    `(vc-annotate-very-old-color ,(nova-darken purple 0.2))
    `(vc-annotate-color-map
