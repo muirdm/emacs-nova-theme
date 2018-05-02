@@ -131,8 +131,8 @@ FACES is a list of faces of the form (name :attr value) such as:
   (show-paren-match :foreground (nova-darken green 0.4) :background green)
   (show-paren-mismatch :background (nova-darken red 0.4) :foreground red)
   (header-line :background bg)
-  (mode-line :box nil :background (nova-blend blue bg 0.6) :foreground fg)
-  (mode-line-inactive :box nil :background (nova-blend blue bg 0.3) :foreground (nova-darken fg 0.2))
+  (mode-line :box nil :background black :foreground cyan)
+  (mode-line-inactive :box nil :background (nova-darken black -0.2) :foreground (nova-darken cyan 0.2))
   (mode-line-buffer-id :weight 'unspecified :foreground white)
   (mode-line-buffer-id-inactive :foreground (nova-darken fg 0.2)) ; doesn't seem to work
   (mode-line-highlight :inherit 'highlight)
