@@ -444,6 +444,10 @@ FACES is a list of faces of the form (name :attr value) such as:
   (sh-quoted-exec :foreground yellow)
   (sh-escaped-newline :foreground special)
 
+  ;; flyspell faces
+  (flyspell-incorrect :underline `(:style wave :color ,red))
+  (flyspell-duplicate :underline `(:style wave :color ,orange))
+
   ;; cperl-mode faces
   (cperl-hash-face :foreground red :background 'unspecified)
   (cperl-array-face :foreground yellow :background 'unspecified)
