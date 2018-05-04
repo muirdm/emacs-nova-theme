@@ -465,7 +465,7 @@ FACES is a list of faces of the form (name :attr value) such as:
 (nova-with-colors
   (custom-theme-set-variables
    'nova
-   `(frame-background-mode dark)
+   `(frame-background-mode 'dark)
    `(vc-annotate-background ,bg)
    `(vc-annotate-very-old-color ,(nova-darken purple 0.2))
    `(vc-annotate-color-map
