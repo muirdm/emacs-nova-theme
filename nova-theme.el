@@ -1,4 +1,4 @@
-;;; nova-theme.el --- a dark, pastel color theme
+;;; nova-theme.el --- A dark, pastel color theme
 ;;
 ;; Copyright (C) 2018 Muir Manders
 ;;
@@ -128,13 +128,12 @@ FACES is a list of faces of the form (name :attr value) such as:
   (button :foreground constant :inherit 'underline)
   (minibuffer-prompt :foreground cyan)
   (trailing-whitespace :background user-action-needed)
-  (show-paren-match :foreground (nova-darken green 0.4) :background green)
+  (show-paren-match :background gray3)
   (show-paren-mismatch :background (nova-darken red 0.4) :foreground red)
   (header-line :background bg)
   (mode-line :box nil :background black :foreground cyan)
   (mode-line-inactive :box nil :background (nova-darken black -0.2) :foreground (nova-darken cyan 0.2))
   (mode-line-buffer-id :weight 'unspecified :foreground white)
-  (mode-line-buffer-id-inactive :foreground (nova-darken fg 0.2)) ; doesn't seem to work
   (mode-line-highlight :inherit 'highlight)
   (link :foreground cyan :underline t)
   (vertical-border :foreground trivial)
@@ -162,9 +161,10 @@ FACES is a list of faces of the form (name :attr value) such as:
   (powerline-inactive0 :background (nova-blend purple bg 0.2) :foreground (nova-darken cyan 0.2))
   (powerline-inactive1 :background (nova-darken black -0.2) :foreground (nova-darken cyan 0.2))
   (powerline-inactive2 :background (nova-darken gray0 -0.3) :foreground (nova-darken fg 0.2))
+  (mode-line-buffer-id-inactive :foreground (nova-darken fg 0.2)) ; doesn't seem to work
 
   ;; search faces
-  (match :background emphasis :foreground gray0 :distant-foreground gray0)
+  (match :background emphasis :foreground bg :distant-foreground bg)
   (isearch :inherit 'match)
   (lazy-highlight :background (nova-darken emphasis 0.3) :foreground bg)
 
@@ -430,7 +430,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   ;; term faces
   (term :foreground fg)
   (term-bold :weight 'bold)
-  (term-color-black :background gray0   :foreground gray0)
+  (term-color-black :background gray0 :foreground gray0)
   (term-color-red :background red :foreground red)
   (term-color-green :background green :foreground green)
   (term-color-yellow :background yellow :foreground yellow)
