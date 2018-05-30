@@ -270,6 +270,24 @@ FACES is a list of faces of the form (name :attr value) such as:
   (diff-function :foreground identifier)
   (diff-hunk-header :foreground purple)
 
+  ;; ediff faces
+  (ediff-current-diff-A :background (nova-blend removed bg 0.3))
+  (ediff-current-diff-B :background (nova-blend added bg 0.3))
+  (ediff-current-diff-C :background (nova-blend yellow bg 0.3))
+  (ediff-current-diff-Ancestor :background (nova-blend blue bg 0.3))
+  (ediff-fine-diff-A :background (nova-blend removed bg 0.6))
+  (ediff-fine-diff-B :background (nova-blend added bg 0.6))
+  (ediff-fine-diff-C :background (nova-blend yellow bg 0.6))
+  (ediff-fine-diff-Ancestor :background (nova-blend blue bg 0.6))
+  (ediff-even-diff-A :background (nova-blend removed bg 0.2))
+  (ediff-even-diff-B :background (nova-blend added bg 0.2))
+  (ediff-even-diff-C :background (nova-blend yellow bg 0.2))
+  (ediff-even-diff-Ancestor :background (nova-blend blue bg 0.2))
+  (ediff-odd-diff-A :background (nova-blend removed bg 0.2))
+  (ediff-odd-diff-B :background (nova-blend added bg 0.2))
+  (ediff-odd-diff-C :background (nova-blend yellow bg 0.2))
+  (ediff-odd-diff-Ancestor :background (nova-blend blue bg 0.2))
+
   ;; rainbow-delimiters faces
   (rainbow-delimiters-depth-1-face :foreground blue)
   (rainbow-delimiters-depth-2-face :foreground pink)
