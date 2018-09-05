@@ -290,7 +290,9 @@ FACES is a list of faces of the form (name :attr value) such as:
 
   ;; smerge faces
   (smerge-lower :background (nova-blend added bg 0.3))
+  (smerge-refined-added :background (nova-blend added bg 0.6))
   (smerge-upper :background (nova-blend removed bg 0.3))
+  (smerge-refined-removed :background (nova-blend removed bg 0.6))
   (smerge-base :background (nova-blend yellow bg 0.3))
   (smerge-markers :background gray2)
 
