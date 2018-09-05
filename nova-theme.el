@@ -288,6 +288,12 @@ FACES is a list of faces of the form (name :attr value) such as:
   (ediff-odd-diff-C :background (nova-blend yellow bg 0.2))
   (ediff-odd-diff-Ancestor :background (nova-blend blue bg 0.2))
 
+  ;; smerge faces
+  (smerge-lower :background (nova-blend added bg 0.3))
+  (smerge-upper :background (nova-blend removed bg 0.3))
+  (smerge-base :background (nova-blend yellow bg 0.3))
+  (smerge-markers :background gray2)
+
   ;; rainbow-delimiters faces
   (rainbow-delimiters-depth-1-face :foreground blue)
   (rainbow-delimiters-depth-2-face :foreground pink)
