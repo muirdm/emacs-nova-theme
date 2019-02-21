@@ -352,9 +352,9 @@ FACES is a list of faces of the form (name :attr value) such as:
   (web-mode-doctype-face :foreground trivial)
   (web-mode-html-tag-face :foreground global)
   (web-mode-html-tag-bracket-face :foreground global)
-  (web-mode-html-attr-name-face :foreground identifier)
+  (web-mode-html-attr-name-face :foreground variable)
   (web-mode-block-attr-name-face :foreground constant)
-  (web-mode-html-entity-face :foreground cyan :inherit 'italic)
+  (web-mode-html-entity-face :foreground special :inherit 'italic)
   (web-mode-block-control-face :foreground emphasis)
 
   (enh-ruby-op-face :inherit 'default)
@@ -472,12 +472,37 @@ FACES is a list of faces of the form (name :attr value) such as:
 
   ;; flyspell faces
   (flyspell-incorrect :underline `(:style wave :color ,red))
-  (flyspell-duplicate :underline `(:style wave :color ,orange))
+  (flyspell-duplicate :underline `(:style wave :color ,yellow))
+
+  ;; flymake faces
+  (flymake-error :underline `(:style wave :color ,red))
+  (flymake-warning :underline `(:style wave :color ,yellow))
+  (flymake-note :underline `(:style wave :color ,green))
+
+  ;; flycheck faces
+  (flycheck-error :underline `(:style wave :color ,red))
+  (flycheck-warning :underline `(:style wave :color ,yellow))
+  (flycheck-info :underline `(:style wave :color ,green))
+
+  ;; realgud faces
+  (realgud-bp-enable-face :foreground red)
+  (realgud-bp-disabled-face :foreground trivial)
+  (realgud-bp-line-enable-face :foreground red)
+  (realgud-bp-line-enable-face :foreground red)
+  (realgud-debugger-running :foreground green)
+  (realgud-overlay-arrow2 :foreground fg)
+  (realgud-overlay-arrow3 :foreground trivial)
 
   ;; cperl-mode faces
   (cperl-hash-face :foreground red :background 'unspecified)
   (cperl-array-face :foreground yellow :background 'unspecified)
   (cperl-nonoverridable-face :inherit 'font-lock-builtin-face)
+
+  ;; xah-elisp
+  (xah-elisp-command-face :foreground green)
+  (xah-elisp-at-symbol :foreground red)
+  (xah-elisp-dollar-symbol :foreground green)
+  (xah-elisp-cap-variable :foreground red)
 
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
