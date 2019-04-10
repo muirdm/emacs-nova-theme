@@ -349,6 +349,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (company-scrollbar-bg :background (nova-darken blue 0.2))
   (company-scrollbar-fg :background (nova-darken blue 0.4))
   (company-template-field :background orange :foreground bg)
+  (company-tooltip-annotation :foreground gray2)
 
   (web-mode-doctype-face :foreground trivial)
   (web-mode-html-tag-face :foreground global)
