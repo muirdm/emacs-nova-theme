@@ -119,7 +119,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (default :foreground fg :background bg)
   (cursor :background user-current-state)
   (region :background gray3 :distant-foreground nil)
-  (highlight :background user-current-state :foreground bg)
+  (highlight :background gray3)
   (fringe :foreground gray3)
   (success :foreground green)
   (warning :foreground yellow)
@@ -166,6 +166,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   ;; search faces
   (match :background emphasis :foreground bg :distant-foreground bg)
   (isearch :inherit 'match)
+  (isearch-fail :background (nova-darken red 0.4) :foreground red)
   (lazy-highlight :background (nova-darken emphasis 0.3) :foreground bg)
 
   ;; ivy faces
@@ -357,11 +358,14 @@ FACES is a list of faces of the form (name :attr value) such as:
   (web-mode-html-entity-face :foreground special :inherit 'italic)
   (web-mode-block-control-face :foreground emphasis)
 
+  ;; enh-ruby-mode
   (enh-ruby-op-face :inherit 'default)
   (enh-ruby-string-delimiter-face :inherit 'font-lock-string-face)
   (enh-ruby-heredoc-delimiter-face :inherit 'font-lock-string-face)
   (enh-ruby-regexp-delimiter-face :foreground special)
   (enh-ruby-regexp-face :foreground special)
+  (erm-syn-errline :box `(:line-width 1 :color ,red))
+  (erm-syn-warnline :box `(:line-width 1 :color ,yellow))
 
   ;; widget faces
   (widget-field :background gray2)
@@ -503,6 +507,10 @@ FACES is a list of faces of the form (name :attr value) such as:
   (xah-elisp-at-symbol :foreground red)
   (xah-elisp-dollar-symbol :foreground green)
   (xah-elisp-cap-variable :foreground red)
+
+  ;; lsp-mode
+  (lsp-face-highlight-read :inherit 'highlight)
+  (lsp-face-highlight-write :inherit 'highlight)
 
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
