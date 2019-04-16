@@ -513,6 +513,12 @@ FACES is a list of faces of the form (name :attr value) such as:
   (lsp-face-highlight-read :inherit 'highlight)
   (lsp-face-highlight-write :inherit 'highlight)
 
+  ;; regexp-builder
+  (reb-match-0 :background user-current-state :foreground bg)
+  (reb-match-1 :background emphasis :foreground bg)
+  (reb-match-2 :background orange :foreground bg)
+  (reb-match-3 :background green :foreground bg)
+
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
   (js2-function-param :foreground variable)
