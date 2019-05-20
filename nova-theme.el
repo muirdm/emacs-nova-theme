@@ -270,6 +270,8 @@ FACES is a list of faces of the form (name :attr value) such as:
   (diff-header :inherit 'magit-section)
   (diff-function :foreground identifier)
   (diff-hunk-header :foreground purple)
+  (diff-refine-added :foreground added :background (nova-blend added bg 0.4))
+  (diff-refine-removed :foreground removed :background (nova-blend removed bg 0.4))
 
   ;; ediff faces
   (ediff-current-diff-A :background (nova-blend removed bg 0.3))
@@ -290,11 +292,11 @@ FACES is a list of faces of the form (name :attr value) such as:
   (ediff-odd-diff-Ancestor :background (nova-blend blue bg 0.2))
 
   ;; smerge faces
-  (smerge-lower :background (nova-blend added bg 0.3))
-  (smerge-refined-added :background (nova-blend added bg 0.6))
-  (smerge-upper :background (nova-blend removed bg 0.3))
-  (smerge-refined-removed :background (nova-blend removed bg 0.6))
-  (smerge-base :background (nova-blend yellow bg 0.3))
+  (smerge-lower :background (nova-blend added bg 0.2))
+  (smerge-refined-added :background (nova-blend added bg 0.4))
+  (smerge-upper :background (nova-blend removed bg 0.2))
+  (smerge-refined-removed :background (nova-blend removed bg 0.4))
+  (smerge-base :background (nova-blend yellow bg 0.2))
   (smerge-markers :background gray2)
 
   ;; rainbow-delimiters faces
@@ -341,15 +343,17 @@ FACES is a list of faces of the form (name :attr value) such as:
   (compilation-mode-line-fail :foreground red)
   (compilation-mode-line-exit :foreground green)
 
-  (company-tooltip :foreground bg :background blue)
-  (company-tooltip-selection :background purple)
-  (company-tooltip-common :background 'unspecified)
+  (company-tooltip :foreground white :background gray2)
+  (company-tooltip-selection :background cyan :foreground bg)
+  (company-tooltip-common :background orange :foreground gray2)
+  (company-tooltip-common-selection :background emphasis :foreground gray2)
   (company-preview :foreground bg)
   (company-preview-common :background gray3 :foreground fg)
-  (company-scrollbar-bg :background (nova-darken blue 0.2))
-  (company-scrollbar-fg :background (nova-darken blue 0.4))
+  (company-scrollbar-bg :background gray3)
+  (company-scrollbar-fg :background cyan)
   (company-template-field :background orange :foreground bg)
-  (company-tooltip-annotation :foreground gray2)
+  (company-tooltip-annotation :foreground trivial)
+  (company-tooltip-annotation-selection :foreground gray2)
 
   (web-mode-doctype-face :foreground trivial)
   (web-mode-html-tag-face :foreground global)
