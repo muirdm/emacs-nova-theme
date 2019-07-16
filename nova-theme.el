@@ -193,6 +193,13 @@ FACES is a list of faces of the form (name :attr value) such as:
   (hydra-face-pink :foreground pink)
   (hydra-face-teal :foreground cyan)
 
+  ;; avy faces
+  (avy-lead-face-0 :foreground white :background blue)
+  (avy-lead-face-1 :foreground white :background trivial)
+  (avy-lead-face-2 :foreground white :background pink)
+  (avy-lead-face :foreground white :background red)
+  (avy-background-face :foreground gray3)
+
   ;; ido faces
   (ido-first-match :foreground emphasis)
   (ido-indicator :foreground red :background bg)
@@ -522,6 +529,11 @@ FACES is a list of faces of the form (name :attr value) such as:
   (reb-match-1 :background emphasis :foreground bg)
   (reb-match-2 :background orange :foreground bg)
   (reb-match-3 :background green :foreground bg)
+
+  ;; typescript-mode
+  (typescript-jsdoc-value :foreground pink)
+  (typescript-jsdoc-type :foreground green)
+  (typescript-jsdoc-tag :foreground purple)
 
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
