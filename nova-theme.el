@@ -176,12 +176,14 @@ FACES is a list of faces of the form (name :attr value) such as:
   (ivy-highlight-face :foreground emphasis)
   (ivy-match-required-face :foreground user-action-needed)
   (ivy-confirm-face :foreground green)
+  (ivy-minibuffer-match-face-1 :background 'unspecified :foreground 'unspecified)
   (ivy-minibuffer-match-face-2 :background emphasis :foreground bg)
   (ivy-minibuffer-match-face-3 :background orange :foreground bg)
   (ivy-minibuffer-match-face-4 :background green :foreground bg)
 
   ;; swiper faces
-  (swiper-line-face :background user-current-state :foreground bg)
+  (swiper-line-face :inherit 'highlight)
+  (swiper-match-face-1 :background 'unspecified :foreground 'unspecified)
   (swiper-match-face-2 :background emphasis :foreground bg)
   (swiper-match-face-3 :background orange :foreground bg)
   (swiper-match-face-4 :background green :foreground bg)
