@@ -67,6 +67,8 @@ See <https://trevordmiller.com/projects/nova>.")
 
     ;; non-standard additions
     (variable pink)
+    (brown "#AE938C")
+    (peach "#F1E3C1")
     (black (nova-darken bg 0.2))
     (white (nova-lighten fg 0.5))))
 
@@ -141,6 +143,20 @@ FACES is a list of faces of the form (name :attr value) such as:
   (window-divider-first-pixel :inherit 'vertical-border)
   (window-divider-last-pixel :inherit 'vertical-border)
   (shadow :foreground trivial)
+
+  ;; doom-modeline faces
+  (doom-modeline-buffer-path :weight 'unspecified :foreground trivial)
+  (doom-modeline-buffer-file :weight 'unspecified :foreground white)
+  (doom-modeline-buffer-modified :foreground modified)
+  (doom-modeline-buffer-major-mode :weight 'unspecified)
+  (doom-modeline-buffer-minor-mode :weight 'unspecified)
+  (doom-modeline-project-parent-dir :weight 'unspecified)
+  (doom-modeline-project-dir :weight 'unspecified)
+  (doom-modeline-project-root-dir :weight 'unspecified)
+  (doom-modeline-info :inherit 'success :weight 'unspecified)
+  (doom-modeline-warning :inherit 'warning :weight 'unspecified)
+  (doom-modeline-urgent :inherit 'error :weight 'unspecified)
+  (doom-modeline-bar :background purple)
 
   ;; font lock faces
   (font-lock-function-name-face :foreground identifier)
@@ -532,10 +548,24 @@ FACES is a list of faces of the form (name :attr value) such as:
   (reb-match-2 :background orange :foreground bg)
   (reb-match-3 :background green :foreground bg)
 
+  ;; ert faces
+  (ert-test-result-expected :background green)
+  (ert-test-result-unexpected :background red)
+
   ;; typescript-mode
   (typescript-jsdoc-value :foreground pink)
   (typescript-jsdoc-type :foreground green)
   (typescript-jsdoc-tag :foreground purple)
+
+  ;; messages (i.e. email) faces
+  (message-header-to :foreground fg)
+  (message-header-cc :foreground fg)
+  (message-header-subject :foreground fg)
+  (message-header-other :foreground fg)
+  (message-header-name :foreground global)
+  (message-header-xheader :foreground fg)
+  (message-separator :foreground trivial)
+  (message-cited-text :foreground pink)
 
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
