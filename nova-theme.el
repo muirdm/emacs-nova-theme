@@ -145,8 +145,8 @@ FACES is a list of faces of the form (name :attr value) such as:
   (shadow :foreground trivial)
 
   ;; doom-modeline faces
-  (doom-modeline-buffer-path :weight 'unspecified :foreground trivial)
-  (doom-modeline-buffer-file :weight 'unspecified :foreground white)
+  (doom-modeline-buffer-path :foreground trivial)
+  (doom-modeline-buffer-file :foreground fg)
   (doom-modeline-buffer-modified :foreground modified)
   (doom-modeline-buffer-major-mode :weight 'unspecified)
   (doom-modeline-buffer-minor-mode :weight 'unspecified)
@@ -154,6 +154,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (doom-modeline-project-dir :weight 'unspecified)
   (doom-modeline-project-root-dir :weight 'unspecified)
   (doom-modeline-info :inherit 'success :weight 'unspecified)
+  (doom-modeline-highlight :weight 'unspecified)
   (doom-modeline-warning :inherit 'warning :weight 'unspecified)
   (doom-modeline-urgent :inherit 'error :weight 'unspecified)
   (doom-modeline-bar :background purple)
@@ -582,6 +583,7 @@ FACES is a list of faces of the form (name :attr value) such as:
    `(frame-background-mode 'dark)
    `(vc-annotate-background ,bg)
    `(vc-annotate-very-old-color ,(nova-darken purple 0.2))
+   `(ansi-color-names-vector [,bg ,red ,green ,yellow ,blue ,purple ,cyan ,fg])
    `(vc-annotate-color-map
      `((20 . ,,red)
        (40 . ,,(nova-blend red orange 0.8))
