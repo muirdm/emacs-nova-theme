@@ -568,6 +568,17 @@ FACES is a list of faces of the form (name :attr value) such as:
   (message-separator :foreground trivial)
   (message-cited-text :foreground pink)
 
+  ;; opencl-mode
+  (font-lock-opencl-face :foreground orange)
+
+  ;; go-mode
+  (go-dot-mod-module-name :foreground constant)
+  (go-dot-mod-module-version :foreground trivial)
+  (go-dot-mod-module-semver :foreground fg)
+
+  ;; make-mode
+  (makefile-space :background user-action-needed)
+
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
   (js2-function-param :foreground variable)
