@@ -295,14 +295,16 @@ FACES is a list of faces of the form (name :attr value) such as:
 
   ;; vc faces
   (diff-context :inherit 'magit-diff-context)
-  (diff-added :inherit 'magit-diff-added-highlight)
-  (diff-removed :inherit 'magit-diff-removed-highlight)
+  (diff-added :inherit 'magit-diff-added)
+  (diff-removed :inherit 'magit-diff-removed)
   (diff-file-header :inherit 'magit-diff-file-heading)
   (diff-header :inherit 'magit-section)
   (diff-function :foreground identifier)
   (diff-hunk-header :foreground purple)
-  (diff-refine-added :foreground added :background (nova-blend added bg 0.4))
-  (diff-refine-removed :foreground removed :background (nova-blend removed bg 0.4))
+  (diff-refine-added :inherit 'unspecified) ;:foreground added :background (nova-blend added bg 0.4))
+  (diff-refine-removed :inherit 'unspecified) ;:foreground removed :background (nova-blend removed bg 0.4))
+  (diff-indicator-added :inherit 'magit-diff-added)
+  (diff-indicator-removed :inherit 'magit-diff-removed)
 
   ;; ediff faces
   (ediff-current-diff-A :background (nova-blend removed bg 0.3))
