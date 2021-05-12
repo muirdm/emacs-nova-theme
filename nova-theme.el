@@ -172,6 +172,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (font-lock-type-face :foreground type)
   (font-lock-warning-face :foreground yellow)
   (font-lock-comment-face :foreground trivial)
+  (font-lock-doc-face :foreground trivial)
   (font-lock-negation-char-face :foreground emphasis)
 
   ;; powerline faces
@@ -228,6 +229,11 @@ FACES is a list of faces of the form (name :attr value) such as:
   (ido-only-match :foreground green)
   (ido-subdir :foreground blue)
   (ido-virtual :foreground trivial)
+
+  ;; selectrum-mode
+  (selectrum-current-candidate :background cyan :foreground bg)
+  (selectrum-primary-highlight :background emphasis :foreground bg)
+  (selectrum-secondary-highlight :background orange :foreground bg)
 
   ;; magit faces
   (magit-tag :foreground yellow)
@@ -590,14 +596,24 @@ FACES is a list of faces of the form (name :attr value) such as:
   ;; make-mode
   (makefile-space :background user-action-needed)
 
+  ;; x509-mode
+  (x509-hex-string-face :inherit 'font-lock-comment-face)
+  (x509-oid-face :inherit 'font-lock-constant-face)
+  (x509-bad-date-face :background red)
+
+  (tree-sitter-hl-face:function.call :inherit 'font-lock-function-face)
+  (tree-sitter-hl-face:property :foreground orange)
+
   (js2-warning :underline yellow)
   (js2-error :underline user-action-needed)
   (js2-function-param :foreground variable)
   (js2-function-call :foreground identifier)
   (js2-jsdoc-tag :foreground trivial)
-  (js2-jdsoc-type :foreground type)
-  (js2-jdoc-value :foreground identifier)
-  (js2-external-variable :foreground special))
+  (js2-jsdoc-type :foreground trivial)
+  (js2-jsdoc-value :foreground trivial)
+  (js2-external-variable :foreground special)
+  (js2-jsdoc-html-tag-name :foreground trivial)
+  (js2-jsdoc-html-tag-delimiter :foreground trivial))
 
 (nova-with-colors
   (custom-theme-set-variables
