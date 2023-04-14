@@ -623,7 +623,9 @@ FACES is a list of faces of the form (name :attr value) such as:
   (js2-jsdoc-value :foreground trivial)
   (js2-external-variable :foreground special)
   (js2-jsdoc-html-tag-name :foreground trivial)
-  (js2-jsdoc-html-tag-delimiter :foreground trivial))
+  (js2-jsdoc-html-tag-delimiter :foreground trivial)
+
+  (rustic-errno-face :inherit 'error))
 
 (nova-with-colors
   (custom-theme-set-variables
@@ -632,6 +634,7 @@ FACES is a list of faces of the form (name :attr value) such as:
    `(vc-annotate-background ,bg)
    `(vc-annotate-very-old-color ,(nova-darken purple 0.2))
    `(ansi-color-names-vector [,bg ,red ,green ,yellow ,blue ,purple ,cyan ,fg])
+   `(rustic-ansi-faces [,bg ,red ,green ,yellow ,blue ,purple ,cyan ,fg])
    `(lsp-ui-imenu-colors '(,cyan ,green))
    `(vc-annotate-color-map
      `((20 . ,,red)
