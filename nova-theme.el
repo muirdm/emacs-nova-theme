@@ -146,6 +146,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (shadow :foreground trivial)
   (homoglyph :foreground cyan)
   (tooltip :background yellow :foreground black)
+  (help-key-binding :background 'unspecified :foreground blue)
 
   ;; doom-modeline faces
   (doom-modeline-buffer-path :foreground trivial)
@@ -208,6 +209,15 @@ FACES is a list of faces of the form (name :attr value) such as:
   (swiper-match-face-2 :background emphasis :foreground bg)
   (swiper-match-face-3 :background orange :foreground bg)
   (swiper-match-face-4 :background green :foreground bg)
+
+  ;; orderless
+  (orderless-match-face-0 :background blue :foreground bg)
+  (orderless-match-face-1 :background emphasis :foreground bg)
+  (orderless-match-face-2 :background orange :foreground bg)
+  (orderless-match-face-3 :background green :foreground bg)
+
+  (completions-common-part :inherit 'orderless-match-face-0)
+  (completions-first-difference :inherit 'unspecified)
 
   ;; hydra faces
   (hydra-face-red :foreground red)
@@ -553,8 +563,8 @@ FACES is a list of faces of the form (name :attr value) such as:
   (xah-elisp-cap-variable :foreground red)
 
   ;; lsp-mode
-  (lsp-face-highlight-read :inherit 'highlight)
-  (lsp-face-highlight-write :inherit 'highlight)
+  (lsp-face-highlight-read :inherit 'highlight :underline nil)
+  (lsp-face-highlight-write :inherit 'highlight :weight 'unspecified)
   (lsp-lsp-flycheck-error-unnecessary-face :inherit 'flycheck-error)
   (lsp-lsp-flycheck-warning-unnecessary-face :inherit 'flycheck-warning)
   (lsp-lsp-flycheck-error-deprecated-face :inherit 'flycheck-error)
