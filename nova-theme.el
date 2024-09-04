@@ -625,7 +625,12 @@ FACES is a list of faces of the form (name :attr value) such as:
   (js2-jsdoc-html-tag-name :foreground trivial)
   (js2-jsdoc-html-tag-delimiter :foreground trivial)
 
-  (rustic-errno-face :inherit 'error))
+  (rustic-errno-face :inherit 'error)
+
+  (thrift-ordinal-face :foreground orange)
+  (thrift-doxygen-key-face :foreground orange)
+
+  )
 
 (nova-with-colors
   (custom-theme-set-variables
