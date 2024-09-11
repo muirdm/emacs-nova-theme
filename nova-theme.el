@@ -627,6 +627,8 @@ FACES is a list of faces of the form (name :attr value) such as:
 
   (rustic-errno-face :inherit 'error)
 
+  (thrift-ordinal-face :foreground orange)
+  (thrift-doxygen-key-face :foreground orange)
 
   (ansi-color-black :foreground black :background bg)
   (ansi-color-red :foreground red :background bg)
