@@ -625,7 +625,38 @@ FACES is a list of faces of the form (name :attr value) such as:
   (js2-jsdoc-html-tag-name :foreground trivial)
   (js2-jsdoc-html-tag-delimiter :foreground trivial)
 
-  (rustic-errno-face :inherit 'error))
+  (rustic-errno-face :inherit 'error)
+
+
+  (ansi-color-black :foreground black :background bg)
+  (ansi-color-red :foreground red :background bg)
+  (ansi-color-green :foreground green :background bg)
+  (ansi-color-yellow :foreground yellow :background bg)
+  (ansi-color-blue :foreground blue :background bg)
+  (ansi-color-magenta :foreground pink :background bg)
+  (ansi-color-cyan :foreground cyan :background bg)
+  (ansi-color-white :foreground white :background bg)
+
+  (ansi-color-bright-black :foreground black :background bg)
+  (ansi-color-bright-red :foreground red :background bg)
+  (ansi-color-bright-green :foreground green :background bg)
+  (ansi-color-bright-yellow :foreground yellow :background bg)
+  (ansi-color-bright-blue :foreground blue :background bg)
+  (ansi-color-bright-magenta :foreground pink :background bg)
+  (ansi-color-bright-cyan :foreground cyan :background bg)
+  (ansi-color-bright-white :foreground white :background bg)
+
+
+  ;; (ansi-color-bright-black :foreground (nova-lighten black 0.5) :background black)
+  ;; (ansi-color-bright-red :foreground (nova-lighten red 0.5) :background red)
+  ;; (ansi-color-bright-green :foreground (nova-lighten green 0.5) :background green)
+  ;; (ansi-color-bright-yellow :foreground (nova-lighten yellow 0.5) :background yellow)
+  ;; (ansi-color-bright-blue :foreground (nova-lighten blue 0.5) :background blue)
+  ;; (ansi-color-bright-magenta :foreground (nova-lighten pink 0.5) :background pink)
+  ;; (ansi-color-bright-cyan :foreground (nova-lighten cyan 0.5) :background cyan)
+  ;; (ansi-color-bright-white :foreground (nova-lighten white 0.5) :background white)
+
+  )
 
 (nova-with-colors
   (custom-theme-set-variables
