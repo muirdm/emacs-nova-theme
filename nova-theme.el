@@ -430,7 +430,7 @@ FACES is a list of faces of the form (name :attr value) such as:
   (company-tooltip-selection :background cyan :foreground bg)
   (company-tooltip-common :background orange :foreground gray2)
   (company-tooltip-common-selection :background emphasis :foreground gray2)
-  (company-preview :foreground bg)
+  (company-preview :inherit 'highlight)
   (company-preview-common :background gray3 :foreground fg)
   (company-scrollbar-bg :background gray3)
   (company-scrollbar-fg :background cyan)
